@@ -1,0 +1,215 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1,
+						2,
+						4,
+						5,
+						6
+					],
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						3
+					]
+				},
+				{
+					"build" : "_deps/nlohmann_json-build",
+					"jsonFile" : "directory-_deps.nlohmann_json-build-Debug-928ed0b98e40f126c75a.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.1"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 1,
+					"source" : "build/_deps/nlohmann_json-src"
+				},
+				{
+					"build" : "tests",
+					"childIndexes" : 
+					[
+						3
+					],
+					"jsonFile" : "directory-tests-Debug-b01f6abb0ab61427ef3b.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "tests",
+					"targetIndexes" : 
+					[
+						2
+					]
+				},
+				{
+					"build" : "_deps/catch2-build",
+					"jsonFile" : "directory-_deps.catch2-build-Debug-b1208c190cea666efc56.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.5"
+					},
+					"parentIndex" : 2,
+					"projectIndex" : 2,
+					"source" : "build/_deps/catch2-src"
+				},
+				{
+					"build" : "configured",
+					"jsonFile" : "directory-configured-Debug-3578f59e8a9efbe19381.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "configured"
+				},
+				{
+					"build" : "app",
+					"jsonFile" : "directory-app-Debug-94c5f210ca04b1028ae5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "app",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "src",
+					"childIndexes" : 
+					[
+						7
+					],
+					"jsonFile" : "directory-src-Debug-b6cf2213fc5053b67c22.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "src"
+				},
+				{
+					"build" : "src/my_lib",
+					"jsonFile" : "directory-src.my_lib-Debug-512b25be9a4504891009.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.27"
+					},
+					"parentIndex" : 6,
+					"projectIndex" : 0,
+					"source" : "src/my_lib",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"childIndexes" : 
+					[
+						1,
+						2
+					],
+					"directoryIndexes" : 
+					[
+						0,
+						2,
+						4,
+						5,
+						6,
+						7
+					],
+					"name" : "CMakeStudy",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3
+					]
+				},
+				{
+					"directoryIndexes" : 
+					[
+						1
+					],
+					"name" : "nlohmann_json",
+					"parentIndex" : 0
+				},
+				{
+					"directoryIndexes" : 
+					[
+						3
+					],
+					"name" : "Catch2",
+					"parentIndex" : 0
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 5,
+					"id" : "Executable::@5f5a17c01335469806cb",
+					"jsonFile" : "target-Executable-Debug-5f8580bb2976b67fbb0a.json",
+					"name" : "Executable",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 7,
+					"id" : "Library::@c75f2be49bb1c1e936f4",
+					"jsonFile" : "target-Library-Debug-5856b0a099785794e511.json",
+					"name" : "Library",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "Testing::@a44f0ac069e85531cdee",
+					"jsonFile" : "target-Testing-Debug-dfa9f3b7077039996ee7.json",
+					"name" : "Testing",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "docs::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-docs-Debug-a4ab67fe25544add9574.json",
+					"name" : "docs",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/mac/Desktop/Udemy/Cmake_tests_and_tooling/newCMakeStudy/build",
+		"source" : "/Users/mac/Desktop/Udemy/Cmake_tests_and_tooling/newCMakeStudy"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

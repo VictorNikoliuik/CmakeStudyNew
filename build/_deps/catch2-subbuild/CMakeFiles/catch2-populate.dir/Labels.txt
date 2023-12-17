@@ -1,0 +1,14 @@
+# Target labels
+ catch2-populate
+# Source files and their labels
+/Users/mac/Desktop/Udemy/Cmake_tests_and_tooling/newCMakeStudy/build/_deps/catch2-subbuild/CMakeFiles/catch2-populate
+/Users/mac/Desktop/Udemy/Cmake_tests_and_tooling/newCMakeStudy/build/_deps/catch2-subbuild/CMakeFiles/catch2-populate.rule
+/Users/mac/Desktop/Udemy/Cmake_tests_and_tooling/newCMakeStudy/build/_deps/catch2-subbuild/CMakeFiles/catch2-populate-complete.rule
+/Users/mac/Desktop/Udemy/Cmake_tests_and_tooling/newCMakeStudy/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-build.rule
+/Users/mac/Desktop/Udemy/Cmake_tests_and_tooling/newCMakeStudy/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-configure.rule
+/Users/mac/Desktop/Udemy/Cmake_tests_and_tooling/newCMakeStudy/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-download.rule
+/Users/mac/Desktop/Udemy/Cmake_tests_and_tooling/newCMakeStudy/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-install.rule
+/Users/mac/Desktop/Udemy/Cmake_tests_and_tooling/newCMakeStudy/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-mkdir.rule
+/Users/mac/Desktop/Udemy/Cmake_tests_and_tooling/newCMakeStudy/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-patch.rule
+/Users/mac/Desktop/Udemy/Cmake_tests_and_tooling/newCMakeStudy/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-test.rule
+/Users/mac/Desktop/Udemy/Cmake_tests_and_tooling/newCMakeStudy/build/_deps/catch2-subbuild/catch2-populate-prefix/src/catch2-populate-stamp/catch2-populate-update.rule
