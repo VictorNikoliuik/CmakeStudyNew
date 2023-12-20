@@ -14,18 +14,31 @@ set(LIBRARY_NAME Library)
 set(EXECUTABLE_NAME Executable)
 set(INCLUDE_PATH "${CMAKE_SOURCE_DIR}/include")
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
+option(COMPILER_RT_BUILD_SHARED_ASAN "Zlupa" ON)
 # For non git projects:
 include(AddGitSubmodule)
 # add_git_submodule(external/json)
 
-include(FetchContent)
-FetchContent_Declare(
-    nlohmann_json
-    GIT_REPOSITORY https://github.com/nlohmann/json
-    GIT_TAG v3.11.3
-    GIT_SHALLOW TRUE
-)
-FetchContent_MakeAvailable(nlohmann_json)
+option(USE_CPM "Using CPM package manager" OFF)
+if(USE_CPM)
+
+else()
+    include(FetchContent)
+    FetchContent_Declare(
+        nlohmann_json
+        GIT_REPOSITORY https://github.com/nlohmann/json
+        GIT_TAG v3.11.3
+        GIT_SHALLOW TRUE
+    )
+    FetchContent_MakeAvailable(nlohmann_json)
+
+    FetchContent_Declare(
+        Catch2
+        GIT_REPOSITORY https://github.com/catchorg/Catch2
+        GIT_TAG v2.13.9
+        GIT_SHALLOW TRUE)
+    FetchContent_MakeAvailable(Catch2)
+endif()
 
 #Doxygen generating target
 include(Docs)
@@ -47,7 +60,11 @@ option(SANITIZER_UNDEFINED "Enabale sanitizer undefined error" ON)
 
 if(SANITIZER_ADRESS OR SANITIZER_UNDEFINED)
     include(Sanitizers)
-    add_sanitizer_flags(SANITIZER_ADRESS SANITIZER_UNDEFINED)
+endif()
+
+option (LTO_ENABLED "Enable LTO/IPO" ON)
+if(LTO_ENABLED)
+    include(Lto)
 endif()
 
 

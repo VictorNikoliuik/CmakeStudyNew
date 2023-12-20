@@ -18,3 +18,11 @@ if(${ENABLE_WARNINGS})
         ${ENABLE_WARNINGS_AS_ERRORS}
     )
 endif()
+
+if(${LTO_ENABLED})
+    target_enable_lto(${LIBRARY_NAME})
+endif()
+
+if(SANITIZER_ADRESS OR SANITIZER_UNDEFINED AND NOT ${ENABLE_TEST})
+    add_sanitizer_flags(${EXECUTABLE_NAME} SANITIZER_ADRESS SANITIZER_UNDEFINED)
+endif()
