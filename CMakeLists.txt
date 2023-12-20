@@ -19,10 +19,14 @@ option(COMPILER_RT_BUILD_SHARED_ASAN "Zlupa" ON)
 include(AddGitSubmodule)
 # add_git_submodule(external/json)
 
-option(USE_CPM "Using CPM package manager" OFF)
+option(USE_CPM "Using CPM package manager" ON)
 if(USE_CPM)
-
+    message(STATUS "Using CPM")
+    include(CPM)
+    cpmaddpackage("gh:nlohmann/json#v3.11.3")
+    cpmaddpackage("gh:catchorg/Catch2#v2.13.9")
 else()
+    message(STATUS "Using FetchContent")
     include(FetchContent)
     FetchContent_Declare(
         nlohmann_json
