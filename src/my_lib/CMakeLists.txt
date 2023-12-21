@@ -10,19 +10,15 @@ ${MY_LIB_HEADERS})
 
 target_include_directories(${LIBRARY_NAME} PUBLIC ${LIBRARIES_INCLUDES})
 
-
-if(${ENABLE_WARNINGS})
-    target_set_warnings(
-        ${LIBRARY_NAME}
-        ${ENABLE_WARNINGS}
-        ${ENABLE_WARNINGS_AS_ERRORS}
-    )
-endif()
-
-if(${LTO_ENABLED})
-    target_enable_lto(${LIBRARY_NAME})
-endif()
-
 if(SANITIZER_ADRESS OR SANITIZER_UNDEFINED AND NOT ${ENABLE_TEST})
     add_sanitizer_flags(${EXECUTABLE_NAME} SANITIZER_ADRESS SANITIZER_UNDEFINED)
 endif()
+
+target_set_warnings(
+        TARGET
+        ${LIBRARY_NAME}
+        ENABLE
+        ${ENABLE_WARNINGS}
+        AS_ERRORS
+        ${ENABLE_WARNINGS_AS_ERRORS}
+    )

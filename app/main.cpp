@@ -5,7 +5,7 @@
 int main()
 {
     int i[2];
-    i[2] = 2;
+    // i[2] = 2;
     
     print_hello_world();
     print_project_info();
