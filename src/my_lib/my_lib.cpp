@@ -1,7 +1,8 @@
-#include <iostream>
-#include <cstdint>
 #include "my_lib.h"
+#include <iostream>
+
 #include "projectVersion.hpp"
+#include "my_lib.h"
 
 void print_hello_world()
 {
@@ -14,7 +15,7 @@ void print_project_info()
     std::cout << "Project Version: " << project_version << '\n';
 }
 
-
-uint32_t factorial( uint32_t number ) {
-    return number <= 1 ? 1 : factorial(number-1) * number;
+uint32_t factorial(uint32_t number)
+{
+    return number <= 1 ? 1 : factorial(number - 1) * number;
 }

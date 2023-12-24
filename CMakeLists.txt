@@ -1,22 +1,22 @@
 cmake_minimum_required(VERSION 3.27)
 
 project(
-    CMakeStudy
+    NewCMakeStudy
     VERSION 1.0.0
-    LANGUAGES C CXX
-)
+    LANGUAGES C CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(LIBRARY_NAME Library)
 set(EXECUTABLE_NAME Executable)
-set(INCLUDE_PATH "${CMAKE_SOURCE_DIR}/include")
+set(INCLUDE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/include")
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake/")
 
 # Options
-option(COMPILER_RT_BUILD_SHARED_ASAN "Zlupa" ON)
+# option(COMPILER_RT_BUILD_SHARED_ASAN "Zlupa" ON)
 option(USE_CPM "Using CPM package manager" OFF)
 option(USE_CONAN "Using CPM package manager" ON)
 option(ENABLE_TEST "Define if Unit Tests enabled" ON)
@@ -25,10 +25,20 @@ option(ENABLE_WARNINGS_AS_ERRORS "Enabale compiler warnings as errors" OFF)
 option(SANITIZER_ADRESS "Enabale sanitizer adress error" ON)
 option(SANITIZER_UNDEFINED "Enabale sanitizer undefined error" ON)
 option(LTO_ENABLED "Enable LTO/IPO" ON)
+option(CLANG_TIDY_ENABLED "Enalbe clang-tidy" ON)
+option(ENABLE_CLANG_FORMAT "Enalbe clang-format" ON)
+option(ENABLE_CMAKE_FORMAT "Enalbe cmake-format" ON)
+option(ENABLE_COVERAGE "Enable a Code Coverage build." ON)
 
 # For non git projects:
 include(AddGitSubmodule)
 # add_git_submodule(external/json)
+
+include(Tools)
+include(ConfigSafeGuards)
+
+add_cmake_format_target()
+add_clang_format_target()
 
 if(USE_CPM)
     message(STATUS "Using CPM")
@@ -48,8 +58,7 @@ else()
         nlohmann_json
         GIT_REPOSITORY https://github.com/nlohmann/json
         GIT_TAG v3.11.3
-        GIT_SHALLOW TRUE
-    )
+        GIT_SHALLOW TRUE)
     FetchContent_MakeAvailable(nlohmann_json)
 
     FetchContent_Declare(
@@ -62,11 +71,6 @@ endif()
 
 #Doxygen generating target
 include(Docs)
-
-if(ENABLE_TEST)
-    add_subdirectory(tests)
-endif()
-
 
 if(ENABLE_WARNINGS)
     include(Warnings)
@@ -83,12 +87,17 @@ if(LTO_ENABLED)
         ${LIBRARY_NAME}
         ${EXECUTABLE_NAME}
         ENABLE
-        ON
-    )
+        ON)
 endif()
 
+if(ENABLE_COVERAGE)
+    include(CodeCoverage)
+    append_coverage_compiler_flags()
+endif()
 
 add_subdirectory(configured)
 # add_subdirectory(external)
 add_subdirectory(app)
 add_subdirectory(src)
+add_subdirectory(include)
+add_subdirectory(tests)
