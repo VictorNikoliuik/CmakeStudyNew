@@ -1,8 +1,8 @@
 #include "my_lib.h"
 #include <iostream>
 
-#include "projectVersion.hpp"
 #include "my_lib.h"
+#include "projectVersion.hpp"
 
 void print_hello_world()
 {
